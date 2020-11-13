@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js" defer></script>
+    <title>TODO Vue</title>
+</head>
+<body>
+
+<div id="todo-list">
+
+<div class="field">
+    <div class="control">
+        <input type="text" id="input" v-model="message" v-on:keyup.enter="addToList">
+    </div>
+</div>
+
+    <h4 class="title is-4"> Мои задачи </h4>
+    <ol>
+        <li v-for="(item, index) in list" :data-index="index" title="Нажми, чтобы удалить" v-on:click="deleteItem"> {{ item}} </li>
+    </ol>
+</div>
+</body>
+</html>
